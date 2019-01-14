@@ -1,6 +1,15 @@
 <h2><%= @message.title %></h2>
 <p><%= @message.description %></p>
 
+
+<h3 class="comment-section-header">Comments:</h3>
+<!-- renders the _comment.html.erb partial file. -->
+<p><%= render @message.comments %></p>
+
+<h3 class="reply-to-msg">Reply to Message:</h3>
+<!-- renders the comments form -->
+<%= render 'comments/form' %>
+
 <%= link_to "Back", root_path %>
 <%= link_to "Edit", edit_message_path(@message) %>
 <%= link_to "Delete", message_path(@message), method: :delete, data: { confirm: "Are you sure ?"} %>
