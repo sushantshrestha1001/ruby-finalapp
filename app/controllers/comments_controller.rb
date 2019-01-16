@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
     before_action :find_message, only: [:create, :edit, :update, :destroy]
 	before_action :find_comment, only: [:edit, :update, :destroy]
-    before_action :authenticate_user!, except: [:index, :show]
+	before_action :authenticate_user!
     
     def create
         
